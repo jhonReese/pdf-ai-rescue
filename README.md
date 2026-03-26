@@ -1,16 +1,25 @@
-# 🚀 Ultimate AI PDF Rescue Toolkit & Academic Engine
+# 🚀 Ultimate AI PDF Rescue Toolkit & Academic Engine V2.0
 
-這不只是一個 PDF 救援工具，這是一座超前世界的**「主動學習型基礎設施」**。
-Reese Wang 的 PDF 救援 toolkit，起因是女友的 iPad 內建的「檔案」發生 OOM，故而建立此工具。結合底層二進位鑑識 (binwalk, qpdf) 與 AI 視覺引擎 (Tesseract OCR)，專為修復因記憶體溢出、存檔崩潰而損毀的原文書與手寫筆記所設計。
+Reese Wang 的 PDF 救援 toolkit，起因是女友的 iPad 內建的「檔案」發生 OOM，故而建立此工具。結合底層二進位鑑識 (binwalk, qpdf, mupdf) 與 AI 視覺引擎 (Tesseract eng+equ)，專為修復因記憶體溢出、存檔崩潰而損毀的原文書與手寫筆記所設計，同時也為正常學術資料學習。
 
-## 🔥 獨家殺手級功能 (World-Class Features)
-1. **二進位深層提取**：無視 PDF 目錄結構毀損，暴力提煉出所有圖層與筆記。
-2. **AI 無損重組**：自動判讀碎片的排列順序，無損重組為完美的高畫質 PDF。
-3. **數學定理自動萃取 (Theorem Extractor)**：掃描微積分、線性代數文本，獨立匯出 Theorem、Proof 等 Markdown 筆記。
-4. **大考單字收割 (Anki Deck Generator)**：捕捉 GRE/TOEFL 高頻學術單字，直接匯出為 CSV 閃卡組。
+## 🔥 V2.0 智慧殺手級
+1. **修復與學習 (--full)**：混合 Logical/Forensic 提取技術，駭客程度的頂級救援PDF，並同時提煉主動學習 AI筆記。
+2. **只學習 (--learn-only)**：針對**正常的原文書 (如 Calculus)** ，快速萃取數學定理與Anki高階閃卡csv.。
+3. **只修復 (--repair-only)**：純粹使用 binwalk, qpdf, mupdf 進行底層修復，不進行 AI 視覺引擎。
 
-## ⚡ 如何使用 (最精簡分享版)
-只要電腦裝有 Docker，打開終端機，執行以下唯一一行指令即可完成一切 (請將「你的壞掉檔案.pdf」替換成自己的檔名)：
+## ⚡ 如何在本機使用一鍵指令 (請將 reesewang0305 換成你上傳的 Docker 帳號)
 
+### 修復與學習 (--full)：結構全毀損、崩潰的作業
 ```bash
-docker run -it --rm -v "$(pwd):/workspace" reesewang0305/pdf-ai-rescue rescue 你的壞掉檔案.pdf
+docker run -it --rm -v "$(pwd):/workspace" reesewang0305/pdf-ai-rescue rescue --full broken.pdf
+(我們從二進位屎山中把資料炸出來並救回)
+
+### 只學習 (--learn-only)：正常原文書提煉 (例如 Thomas' Calculus)
+```bash
+docker run -it --rm -v "$(pwd):/workspace" reesewang0305/pdf-ai-rescue rescue --learn-only Thomas.pdf
+(你會成功解鎖所有內嵌圖片與文字)
+
+
+### 只修復 (--repair-only)：只要修復檔案，不要 AI 
+```bash
+docker run -it --rm -v "$(pwd):/workspace" reesewang0305/pdf-ai-rescue rescue --repair-only damaged.pdf
