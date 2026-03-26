@@ -2,7 +2,7 @@
 
 Reese Wang 的 PDF 救援 toolkit，起因是女友的 iPad 內建的「檔案」發生 OOM，故而建立此工具。結合底層二進位鑑識 (binwalk, qpdf, mupdf) 與 AI 視覺引擎 (Tesseract eng+equ)，專為修復因記憶體溢出、存檔崩潰而損毀的原文書與手寫筆記所設計，同時也為正常學術資料學習。
 
-## 🔥 V2.0 智慧殺手級
+## 🔥 V2.0 
 1. **修復與學習 (--full)**：混合 Logical/Forensic 提取技術，駭客程度的頂級救援PDF，並同時提煉主動學習 AI筆記。
 2. **只學習 (--learn-only)**：針對**正常的原文書 (如 Calculus)** ，快速萃取數學定理與Anki高階閃卡csv.。
 3. **只修復 (--repair-only)**：純粹使用 binwalk, qpdf, mupdf 進行底層修復，不進行 AI 視覺引擎。
